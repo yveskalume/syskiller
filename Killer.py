@@ -10,4 +10,4 @@ class Killer():
                 print(name)
                 if name == "syswin.exe":
                     process.kill()
-            time.sleep(1)
+            time.sleep(4)
