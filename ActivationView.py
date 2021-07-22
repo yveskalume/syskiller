@@ -20,9 +20,9 @@ from path import Path
 
 class ActivationView():
 
-    
+
     def run(self) -> None :
-        
+
         window = Tk()
         window.geometry('560x560')
         window.title('Syskiller')
@@ -32,7 +32,7 @@ class ActivationView():
 
         login_window = Frame(window, width=400, height=450, bg='white')
         login_window.place(x=80, y=45)
-        
+
         #Login Text
         login_text = Label(window, text='Activation', font=('Roboto',20))
         login_text.configure(fg='black', bg='white')
@@ -57,7 +57,9 @@ class ActivationView():
             success = Label(text='Success. You Loged in', fg='green', bg='white')
             success.place(x=245, y=355)
             try:
-                os.mkdir(".kprotect")
+                path_appdata = os.getenv('APPDATA')
+                appdirectory = os.path.join(path_appdata, ".kprotect")
+                os.mkdir(appdirectory)
                 window.destroy()
                 MainView().run()
             except OSError as error:
