@@ -28,7 +28,7 @@ class MainView():
 
         # window.mainloop()
         threading.Thread(target=self.design).start()
-        # threading.Thread(target = Killer().run()).start()
+        threading.Thread(target = Killer().run()).start()
 
     def design(self):
         screen = turtle.Screen()

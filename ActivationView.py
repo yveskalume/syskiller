@@ -28,11 +28,10 @@ class ActivationView():
         window.title('Syskiller')
         window.configure(bg='black')
         window.resizable(False, False)
-        window.iconbitmap('./icon.ico')
+        #window.iconbitmap('./icon.ico')
 
         login_window = Frame(window, width=400, height=450, bg='white')
         login_window.place(x=80, y=45)
-
         # Login Text
         login_text = Label(login_window, text='Activation', font=('Roboto', 20))
         login_text.configure(fg='black', bg='white')
@@ -40,7 +39,7 @@ class ActivationView():
 
         # Info Login Text
         label_text = Label(login_window, text='Veuillez entrez une clé d\'activation pour l\'utilisation du logiciel',
-                           wraplengt=200, font=(15))
+                          wraplengt=200, font=(15))
         label_text.configure(fg='black', bg='white')
         label_text.place(x=200, y=150, anchor='center')
 
@@ -55,11 +54,16 @@ class ActivationView():
         login_button.place(x=180, y=300, height=50, width=200)
 
         # Contact number and phone number
+        """
         canva = Canvas(login_window, width=150, height=40, bg='white', highlightthickness=0)
         img = PhotoImage(file='./phone.png', master=login_window)
         canva.create_image(25, 20, image=img)
         canva.create_text(90, 20, text='contactez nous:', font=(13))
-        canva.place(x=200, y=380, anchor='center')
+        canva.place(x=200, y=380, anchor='center')"""
+
+        phone_label = Label(login_window, text="contactez nous:", font=(13))
+        phone_label.configure(fg="black", bg="white")
+        phone_label.place(x=200, y=380, anchor='center')
 
         phone_text = Label(login_window, text='+243 97 493 9405', font=(13))
         phone_text.configure(fg='black', bg='white')
