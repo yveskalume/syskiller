@@ -16,12 +16,10 @@ class MainView():
         # window.resizable(False, False)
 
         # mImage = PhotoImage(file='icone.png')
-        
 
         # button = Button(window,image = mImage)
         # button.config(bg='white')
         # button.pack(anchor=CENTER)
-
 
         # text = Label(window, text='Vous etes protege', font=('Roboto',20))
         # text.configure(fg='white')
@@ -30,20 +28,19 @@ class MainView():
 
         # window.mainloop()
         threading.Thread(target=self.design).start()
-        threading.Thread(target = Killer().run()).start()
-    
-    def design(self) :
-        colors = [ "pink","yellow","blue","green","white","red"]
+        # threading.Thread(target = Killer().run()).start()
+
+    def design(self):
+        screen = turtle.Screen()
+        screen.setup(400, 400)
+        colors = ["pink", "yellow", "blue", "green", "white", "red"]
         sketch = turtle.Pen()
         turtle.bgcolor("black")
         turtle.title("Syskiller")
-        
+
         for i in range(200):
             sketch.pencolor(colors[i % 6])
-            sketch.width(i/100 + 1)
+            sketch.width(i / 100 + 1)
             sketch.forward(i)
             sketch.left(59)
         turtle.Screen().exitonclick()
-
-    
-    
