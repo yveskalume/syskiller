@@ -6,9 +6,6 @@ from tkinter import Button, Frame, Tk, Entry, Label
 from functools import cached_property
 import os
 
-
-
-
 # while True:
 #     for process in psutil.process_iter():
 #         name = process.name
@@ -17,12 +14,11 @@ import os
 #             process.kill()
 
 
-
-#Window
+# Window
 path_appdata = os.getenv('APPDATA')
-appdirectory = os.path.join(path_appdata,".kprotect")
+appdirectory = os.path.join(path_appdata, ".kprotect")
 
-if os.path.isdir(appdirectory) :
+if os.path.isdir(appdirectory):
     MainView().run()
-else :
+else:
     ActivationView().run()
